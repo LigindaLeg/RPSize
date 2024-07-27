@@ -1,6 +1,5 @@
-﻿using System;
-using Exiled.API.Features;
-using Exiled.Events.EventArgs.Player;
+﻿using Exiled.Events.EventArgs.Player;
+using UnityEngine;
 
 namespace RPSize
 {
@@ -8,9 +7,8 @@ namespace RPSize
     {
         public void OnPlayerSpawned(SpawnedEventArgs ev)
         {
-            float psize;
-            psize = UnityEngine.Random.Range(0.8f, 1.2f);
-            ev.Player.Scale = new UnityEngine.Vector3(psize, psize, psize);
+            float psize = (float) (Plugin.Instance.RNG.NextDouble() * (Plugin.Instance.Config.MaxSize - Plugin.Instance.Config.MinSize) + Plugin.Instance.Config.MinSize);
+            ev.Player.Scale = new Vector3(psize, psize, psize);
         }
     }
 }

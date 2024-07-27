@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using Exiled.API.Features;
-using MEC;
-using UnityEngine;
-using PlayerRoles;
-using Exiled.Events.EventArgs.Map;
-using Exiled.Events.EventArgs.Server;
 using Exiled.Events.Features;
 
 namespace RPSize
@@ -14,11 +8,12 @@ namespace RPSize
     {
         public override string Name => "RPSize";
         public override string Author => "Liginda";
-        public override Version Version => new Version(1, 0, 0);
+        public override Version Version => new Version(1, 0, 1);
         public override Version RequiredExiledVersion => new Version(8, 9, 5);
 
         public static Plugin Instance;
         public EventHandlers eventHandlers;
+        public Random RNG = new Random();
 
         public override void OnEnabled()
         {
@@ -26,17 +21,17 @@ namespace RPSize
             this.eventHandlers = new EventHandlers();
             Exiled.Events.Handlers.Player.Spawned += new CustomEventHandler<Exiled.Events.EventArgs.Player.SpawnedEventArgs>(eventHandlers.OnPlayerSpawned);
 
-            Log.Info("Random Player Size enabled.");
+            Log.Debug("Random Player Size enabled.");
             base.OnEnabled();
         }
 
         public override void OnDisabled()
         {
+            Exiled.Events.Handlers.Player.Spawned -= new CustomEventHandler<Exiled.Events.EventArgs.Player.SpawnedEventArgs>(eventHandlers.OnPlayerSpawned);
             Instance = null;
             this.eventHandlers = null;
-            Exiled.Events.Handlers.Player.Spawned -= new CustomEventHandler<Exiled.Events.EventArgs.Player.SpawnedEventArgs>(eventHandlers.OnPlayerSpawned);
 
-            Log.Info("Random Player Size disabled.");
+            Log.Debug("Random Player Size disabled.");
             base.OnDisabled();
         }
     }

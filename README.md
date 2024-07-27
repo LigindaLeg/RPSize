@@ -23,3 +23,5 @@ r_p_size:
   # Maximum size of the player.
   max_size: 1.20000005
 ```
+
+Thanks for x0jony to create pull request <3

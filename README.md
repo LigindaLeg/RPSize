@@ -1,6 +1,6 @@
 ![Total downloads](https://img.shields.io/github/downloads/LigindaLeg/RPSize/total)
 
-# RPSize
+# RPSize / no longer supported
 RPSize is an EXILED plugin for SCP: Secret Laboratory that randomly scales every player's size.
 
 ## Installation

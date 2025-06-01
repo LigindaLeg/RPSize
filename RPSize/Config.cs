@@ -12,7 +12,7 @@ namespace RPSize
         public bool Debug { get; set; } = false;
         
         [Description("Minimum size of the player.")]
-        public float MinSize { get; set; } = .8f;
+        public float MinSize { get; set; } = 0.8f;
         
         [Description("Maximum size of the player.")]
         public float MaxSize { get; set; } = 1.2f;

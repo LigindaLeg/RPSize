@@ -7,8 +7,12 @@ namespace RPSize
     {
         public void OnPlayerSpawned(SpawnedEventArgs ev)
         {
-            float psize = (float) (Plugin.Instance.RNG.NextDouble() * (Plugin.Instance.Config.MaxSize - Plugin.Instance.Config.MinSize) + Plugin.Instance.Config.MinSize);
-            ev.Player.Scale = new Vector3(psize, psize, psize);
+            if (ev.Player.Role.Team != PlayerRoles.Team.SCPs)
+            {
+                float psize = Random.Range(Plugin.Instance.Config.MinSize, Plugin.Instance.Config.MaxSize);
+                ev.Player.Scale = new Vector3(psize, psize, psize);
+            }
+            
         }
     }
 }

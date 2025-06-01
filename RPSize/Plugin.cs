@@ -8,8 +8,8 @@ namespace RPSize
     {
         public override string Name => "RPSize";
         public override string Author => "Liginda";
-        public override Version Version => new Version(1, 0, 1);
-        public override Version RequiredExiledVersion => new Version(8, 9, 5);
+        public override Version Version => new Version(1, 1, 0);
+        public override string Prefix => "RPSize";
 
         public static Plugin Instance;
         public EventHandlers eventHandlers;
@@ -20,8 +20,6 @@ namespace RPSize
             Instance = this;
             this.eventHandlers = new EventHandlers();
             Exiled.Events.Handlers.Player.Spawned += new CustomEventHandler<Exiled.Events.EventArgs.Player.SpawnedEventArgs>(eventHandlers.OnPlayerSpawned);
-
-            Log.Debug("Random Player Size enabled.");
             base.OnEnabled();
         }
 
@@ -30,8 +28,6 @@ namespace RPSize
             Exiled.Events.Handlers.Player.Spawned -= new CustomEventHandler<Exiled.Events.EventArgs.Player.SpawnedEventArgs>(eventHandlers.OnPlayerSpawned);
             Instance = null;
             this.eventHandlers = null;
-
-            Log.Debug("Random Player Size disabled.");
             base.OnDisabled();
         }
     }

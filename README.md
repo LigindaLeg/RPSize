@@ -1,6 +1,6 @@
 ![Total downloads](https://img.shields.io/github/downloads/LigindaLeg/RPSize/total)
 
-# RPSize / no longer supported
+# RPSize
 RPSize is an EXILED plugin for SCP: Secret Laboratory that randomly scales every player's size.
 
 ## Installation
@@ -8,20 +8,15 @@ RPSize is an EXILED plugin for SCP: Secret Laboratory that randomly scales every
 2. Place the `RPSize.dll` file in your `EXILED/Plugins` directory.
 3. Restart your SCP: Secret Laboratory server.
 
-## Configuration
-RPSize can be configured via the EXILED config file at `EXILED/Configs/{port}-config.yml`.
-
 ### Default Configuration
 ```yaml
-r_p_size:
+RPSize:
   # Is the plugin enabled?
-  s_enabled: true
+  is_enabled: true
   # Are debug messages displayed?
   debug: false
   # Minimum size of the player.
-  min_size: 0.800000012
+  min_size: 0.8
   # Maximum size of the player.
-  max_size: 1.20000005
+  max_size: 1.2
 ```
-
-Thanks for x0jony to create pull request <3
